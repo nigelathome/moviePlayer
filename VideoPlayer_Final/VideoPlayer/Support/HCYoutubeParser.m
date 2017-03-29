@@ -170,23 +170,32 @@
         NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@", kYoutubeInfoURL, youtubeID]];
         NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
         [request setValue:kUserAgent forHTTPHeaderField:@"User-Agent"];
-        [request setHTTPMethod:@"GET"];
+//        [request setHTTPMethod:@"GET"];
+        request.HTTPMethod = @"GET";
 
-        NSOperationQueue *queue = [[NSOperationQueue alloc] init];
-
-        [NSURLConnection sendAsynchronousRequest:request queue:queue completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
+//        NSOperationQueue *queue = [[NSOperationQueue alloc] init];
+        
+        //推荐使用这种请求方法；
+        NSURLSession *session = [NSURLSession sharedSession];
+        
+        __block  NSString *result = @"";
+        NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+            
             if (!error) {
+                //没有错误，返回正确；
+                result = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+                NSLog(@"返回正确：%@", result);
                 NSString *responseString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-
+                
                 NSMutableDictionary *parts = [responseString dictionaryFromQueryStringComponents];
-
+                
                 if (parts) {
-
+                    
                     NSString *fmtStreamMapString = [[parts objectForKey:@"url_encoded_fmt_stream_map"] objectAtIndex:0];
                     NSArray *fmtStreamMapArray = [fmtStreamMapString componentsSeparatedByString:@","];
-
+                    
                     NSMutableDictionary *videoDictionary = [NSMutableDictionary dictionary];
-
+                    
                     for (NSString *videoEncodedString in fmtStreamMapArray) {
                         NSMutableDictionary *videoComponents = [videoEncodedString dictionaryFromQueryStringComponents];
                         NSString *type = [[[videoComponents objectForKey:@"type"] objectAtIndex:0] stringByDecodingURLFormat];
@@ -194,13 +203,13 @@
                         if ([videoComponents objectForKey:@"sig"]) {
                             signature = [[videoComponents objectForKey:@"sig"] objectAtIndex:0];
                         }
-
+                        
                         if ([type rangeOfString:@"mp4"].length > 0) {
                             NSString *url = [[[videoComponents objectForKey:@"url"] objectAtIndex:0] stringByDecodingURLFormat];
                             url = [NSString stringWithFormat:@"%@&signature=%@", url, signature];
-
+                            
                             NSString *quality = [[[videoComponents objectForKey:@"quality"] objectAtIndex:0] stringByDecodingURLFormat];
-
+                            
                             if ([videoDictionary valueForKey:quality] == nil) {
                                 [videoDictionary setObject:url forKey:quality];
                             }
@@ -210,13 +219,63 @@
                         completeBlock(videoDictionary, nil);
                     });
                 }
-            }
-            else {
+
+                
+            }else{
+                //出现错误；
+                NSLog(@"错误信息：%@", error);
                 dispatch_async(dispatch_get_main_queue(), ^{
                     completeBlock(nil, error);
                 });
             }
+            
         }];
+        
+        [dataTask resume];
+        
+//        [NSURLConnection sendAsynchronousRequest:request queue:queue completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
+//            if (!error) {
+//                NSString *responseString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+//
+//                NSMutableDictionary *parts = [responseString dictionaryFromQueryStringComponents];
+//
+//                if (parts) {
+//
+//                    NSString *fmtStreamMapString = [[parts objectForKey:@"url_encoded_fmt_stream_map"] objectAtIndex:0];
+//                    NSArray *fmtStreamMapArray = [fmtStreamMapString componentsSeparatedByString:@","];
+//
+//                    NSMutableDictionary *videoDictionary = [NSMutableDictionary dictionary];
+//
+//                    for (NSString *videoEncodedString in fmtStreamMapArray) {
+//                        NSMutableDictionary *videoComponents = [videoEncodedString dictionaryFromQueryStringComponents];
+//                        NSString *type = [[[videoComponents objectForKey:@"type"] objectAtIndex:0] stringByDecodingURLFormat];
+//                        NSString *signature = nil;
+//                        if ([videoComponents objectForKey:@"sig"]) {
+//                            signature = [[videoComponents objectForKey:@"sig"] objectAtIndex:0];
+//                        }
+//
+//                        if ([type rangeOfString:@"mp4"].length > 0) {
+//                            NSString *url = [[[videoComponents objectForKey:@"url"] objectAtIndex:0] stringByDecodingURLFormat];
+//                            url = [NSString stringWithFormat:@"%@&signature=%@", url, signature];
+//
+//                            NSString *quality = [[[videoComponents objectForKey:@"quality"] objectAtIndex:0] stringByDecodingURLFormat];
+//
+//                            if ([videoDictionary valueForKey:quality] == nil) {
+//                                [videoDictionary setObject:url forKey:quality];
+//                            }
+//                        }
+//                    }
+//                    dispatch_async(dispatch_get_main_queue(), ^{
+//                        completeBlock(videoDictionary, nil);
+//                    });
+//                }
+//            }
+//            else {
+//                dispatch_async(dispatch_get_main_queue(), ^{
+//                    completeBlock(nil, error);
+//                });
+//            }
+//        }];
     }
 }
 
