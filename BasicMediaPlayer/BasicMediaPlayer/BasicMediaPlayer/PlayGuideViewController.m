@@ -10,6 +10,11 @@
 
 @interface PlayGuideViewController ()
 
+@property (nonatomic, strong) UIButton *playLocal;
+@property (nonatomic, strong) UIButton *playRemote;
+@property (nonatomic, strong) UIImageView *playLocalView;
+@property (nonatomic, strong) UIView *playRemoteView;
+
 @end
 
 @implementation PlayGuideViewController
@@ -17,6 +22,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.playLocal = [[UIButton alloc] init];
+    [self.view addSubview:self.playLocal];
+    
+    self.playRemote = [[UIButton alloc] init];
+    [self.view addSubview:self.playRemote];
+    
+    self.playLocalView = [[UIImage alloc] imagew];
+    self.playLocalView
+    self.playRemoteView = [[UIView alloc] init];
 }
 
 - (void)didReceiveMemoryWarning {
