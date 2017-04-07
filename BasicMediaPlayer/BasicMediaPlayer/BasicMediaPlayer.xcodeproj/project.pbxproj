@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9122E87B1E977E5B009EBF74 /* play_local@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9122E87A1E977E5B009EBF74 /* play_local@3x.png */; };
+		9122E87D1E977E99009EBF74 /* play_local@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9122E87C1E977E99009EBF74 /* play_local@2x.png */; };
 		9127E73D1E93BE4F0005D932 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9127E73C1E93BE4F0005D932 /* main.m */; };
 		9127E7401E93BE4F0005D932 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9127E73F1E93BE4F0005D932 /* AppDelegate.m */; };
 		9127E7481E93BE4F0005D932 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9127E7471E93BE4F0005D932 /* Assets.xcassets */; };
@@ -31,6 +33,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9122E8741E973C85009EBF74 /* comDef.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = comDef.h; sourceTree = "<group>"; };
+		9122E87A1E977E5B009EBF74 /* play_local@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "play_local@3x.png"; path = "Assets.xcassets/play_local@3x.png"; sourceTree = "<group>"; };
+		9122E87C1E977E99009EBF74 /* play_local@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "play_local@2x.png"; path = "Assets.xcassets/play_local@2x.png"; sourceTree = "<group>"; };
 		9127E7381E93BE4F0005D932 /* BasicMediaPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BasicMediaPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9127E73C1E93BE4F0005D932 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		9127E73E1E93BE4F0005D932 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -68,6 +73,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9122E8791E973F2C009EBF74 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				9122E87C1E977E99009EBF74 /* play_local@2x.png */,
+				9122E87A1E977E5B009EBF74 /* play_local@3x.png */,
+				9127E7471E93BE4F0005D932 /* Assets.xcassets */,
+			);
+			name = Resource;
+			sourceTree = "<group>";
+		};
 		9127E72F1E93BE4F0005D932 = {
 			isa = PBXGroup;
 			children = (
@@ -92,7 +107,7 @@
 				9127E7751E93C0400005D932 /* PlayGuide */,
 				9127E73E1E93BE4F0005D932 /* AppDelegate.h */,
 				9127E73F1E93BE4F0005D932 /* AppDelegate.m */,
-				9127E7471E93BE4F0005D932 /* Assets.xcassets */,
+				9122E8791E973F2C009EBF74 /* Resource */,
 				9127E74C1E93BE4F0005D932 /* Info.plist */,
 				9127E73B1E93BE4F0005D932 /* Supporting Files */,
 			);
@@ -103,6 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				9127E73C1E93BE4F0005D932 /* main.m */,
+				9122E8741E973C85009EBF74 /* comDef.h */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -183,7 +199,8 @@
 				TargetAttributes = {
 					9127E7371E93BE4F0005D932 = {
 						CreatedOnToolsVersion = 8.2;
-						ProvisioningStyle = Automatic;
+						DevelopmentTeam = M6EDV6DS4E;
+						ProvisioningStyle = Manual;
 					};
 					9127E7501E93BE4F0005D932 = {
 						CreatedOnToolsVersion = 8.2;
@@ -223,6 +240,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				9127E7481E93BE4F0005D932 /* Assets.xcassets in Resources */,
+				9122E87B1E977E5B009EBF74 /* play_local@3x.png in Resources */,
+				9122E87D1E977E99009EBF74 /* play_local@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -323,7 +342,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -365,7 +384,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -377,10 +396,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = M6EDV6DS4E;
 				INFOPLIST_FILE = BasicMediaPlayer/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cvc.BasicMediaPlayer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "cd2a5075-af21-4053-9960-aff1b7cb03f8";
+				PROVISIONING_PROFILE_SPECIFIER = millionaire;
 			};
 			name = Debug;
 		};
@@ -388,10 +411,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = M6EDV6DS4E;
 				INFOPLIST_FILE = BasicMediaPlayer/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cvc.BasicMediaPlayer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "cd2a5075-af21-4053-9960-aff1b7cb03f8";
+				PROVISIONING_PROFILE_SPECIFIER = millionaire;
 			};
 			name = Release;
 		};
@@ -460,6 +487,7 @@
 				9127E7671E93BE4F0005D932 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9127E7681E93BE4F0005D932 /* Build configuration list for PBXNativeTarget "BasicMediaPlayerTests" */ = {
 			isa = XCConfigurationList;
@@ -468,6 +496,7 @@
 				9127E76A1E93BE4F0005D932 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9127E76B1E93BE4F0005D932 /* Build configuration list for PBXNativeTarget "BasicMediaPlayerUITests" */ = {
 			isa = XCConfigurationList;
@@ -476,6 +505,7 @@
 				9127E76D1E93BE4F0005D932 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

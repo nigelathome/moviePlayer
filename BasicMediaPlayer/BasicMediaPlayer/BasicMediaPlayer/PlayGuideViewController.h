@@ -10,4 +10,6 @@
 
 @interface PlayGuideViewController : UIViewController
 
+- (id)initWithFrame:(CGRect)frame;
+
 @end

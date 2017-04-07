@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "comDef.h"
 
 @interface AppDelegate ()
 
@@ -17,7 +18,16 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    
+    self.playGuideVC = [[PlayGuideViewController alloc] initWithFrame:CGRectMake(0,0, kScreenWidth, kScreenHeight)];
+    PlayGuideViewController *playGuide = [[PlayGuideViewController alloc] initWithFrame:CGRectMake(0,0, kScreenWidth, kScreenHeight)];
+    UINavigationController *navController = [[UINavigationController alloc]initWithRootViewController:playGuide];//将loginVC添加在navigation上
+
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    // Override point for customization after application launch.
+    self.window.backgroundColor = [UIColor whiteColor];
+    self.window.rootViewController = navController;//navigation加在window上
+    [self.window makeKeyAndVisible];
+
     return YES;
 }
 

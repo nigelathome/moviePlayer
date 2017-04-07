@@ -1,16 +1,13 @@
 //
-//  PlayGuideViewController.m
-//  BasicMediaPlayer
+//  ViewController.m
+//  MultiMediaPlayer
 //
-//  Created by Nigel Lee on 04/04/2017.
-//  Copyright © 2017 Nigel Lee. All rights reserved.
+//  Created by Nigel Lee on 07/04/2017.
+//  Copyright © 2017 Apress. All rights reserved.
 //
 
 #import "PlayGuideViewController.h"
-#import "comDef.h"
-
-static const NSString *kplayLocal = @"playLocalVideo";
-static const NSString *kplayRemote = @"playRemoteVideo";
+#import "ComDef.h"
 
 @interface PlayGuideViewController ()
 
@@ -23,29 +20,22 @@ static const NSString *kplayRemote = @"playRemoteVideo";
 
 @implementation PlayGuideViewController
 
-- (id)initWithFrame:(CGRect)frame
-{
-    if (self = [super init]) {
-        self.view = [[UIView alloc] initWithFrame:frame];
-    }
-   
-    return self;
-}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    // Do any additional setup after loading the view, typically from a nib.
+    [self prefersStatusBarHidden]; // 隐藏顶部状态栏
     
     CGRect headerRect = CGRectMake(kScreenWidth/3 - adapteWith(48), adapteWith(48), adapteWith(80), adapteWith(102));
     self.playLocal = [[UIButton alloc] initWithFrame:headerRect];
     [self.playLocal addTarget:self action:@selector(playVideo:) forControlEvents:UIControlEventTouchUpInside];
+    
+    self.playLocalView = [[UIImageView alloc] initWithFrame:headerRect];
     UIImage *backgroundImage = [UIImage imageNamed:@"play_local"];//本地文件
     self.playLocalView.image = backgroundImage;
-    self.playLocalView = [[UIImageView alloc] initWithFrame:headerRect];
     [self.playLocal addSubview:self.playLocalView];
     [self.view addSubview:self.playLocal];
-    
 }
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -60,6 +50,12 @@ static const NSString *kplayRemote = @"playRemoteVideo";
     
 }
 
+//实现隐藏状态栏方法
+- (BOOL)prefersStatusBarHidden{
+    
+    return YES;
+}
+
 #pragma tips
 - (BOOL)alertErrorTip
 {
@@ -69,7 +65,9 @@ static const NSString *kplayRemote = @"playRemoteVideo";
                                               otherButtonTitles:nil, nil];
     [alertView show];
     return NO;
-
+    
 }
+
+
 
 @end
