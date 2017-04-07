@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "PlayGuideViewController.h"
+#import "NavigationController.h"
 
 @interface AppDelegate ()
 
@@ -21,12 +22,11 @@
     // Override point for customization after application launch.
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     
-    
     PlayGuideViewController *vc = [[PlayGuideViewController alloc] init];
-    UINavigationController *navController = [[UINavigationController alloc]initWithRootViewController:vc];
+    NavigationController *navController = [[NavigationController alloc] initWithRootViewController:vc];
     self.window.rootViewController = navController;
     
-    self.window.backgroundColor = [UIColor redColor];
+    self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;
 }
@@ -91,6 +91,16 @@
     }
     
     return _persistentContainer;
+}
+
+- (UIInterfaceOrientationMask)application:(UIApplication *)application supportedInterfaceOrientationsForWindow:(UIWindow *)window
+{
+    if (self.allowRotation) {
+        return UIInterfaceOrientationMaskAll;
+    }
+    
+    return UIInterfaceOrientationMaskPortrait;
+    
 }
 
 #pragma mark - Core Data Saving support

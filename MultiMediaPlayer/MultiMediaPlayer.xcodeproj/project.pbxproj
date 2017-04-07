@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		910F31641E97947E00FB5617 /* play_remote@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 910F31621E97947E00FB5617 /* play_remote@2x.png */; };
+		910F31651E97947E00FB5617 /* play_remote@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 910F31631E97947E00FB5617 /* play_remote@3x.png */; };
+		910F31681E97A3DD00FB5617 /* NavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 910F31671E97A3DD00FB5617 /* NavigationController.m */; };
 		9122E88C1E977FD4009EBF74 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9122E88B1E977FD4009EBF74 /* main.m */; };
 		9122E88F1E977FD4009EBF74 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9122E88E1E977FD4009EBF74 /* AppDelegate.m */; };
 		9122E8921E977FD4009EBF74 /* PlayGuideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9122E8911E977FD4009EBF74 /* PlayGuideViewController.m */; };
@@ -14,9 +17,14 @@
 		9122E89A1E977FD4009EBF74 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9122E8991E977FD4009EBF74 /* Assets.xcassets */; };
 		9122E8A81E9783DF009EBF74 /* play_local@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9122E8A61E9783DF009EBF74 /* play_local@2x.png */; };
 		9122E8A91E9783DF009EBF74 /* play_local@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9122E8A71E9783DF009EBF74 /* play_local@3x.png */; };
+		91BEBC411E97B7530044F3C5 /* MultiMediaPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91BEBC401E97B7530044F3C5 /* MultiMediaPlayerViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		910F31621E97947E00FB5617 /* play_remote@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "play_remote@2x.png"; sourceTree = "<group>"; };
+		910F31631E97947E00FB5617 /* play_remote@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "play_remote@3x.png"; sourceTree = "<group>"; };
+		910F31661E97A3DD00FB5617 /* NavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationController.h; sourceTree = "<group>"; };
+		910F31671E97A3DD00FB5617 /* NavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationController.m; sourceTree = "<group>"; };
 		9122E8871E977FD4009EBF74 /* MultiMediaPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MultiMediaPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9122E88B1E977FD4009EBF74 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		9122E88D1E977FD4009EBF74 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -29,6 +37,8 @@
 		9122E8A41E97833A009EBF74 /* ComDef.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ComDef.h; sourceTree = "<group>"; };
 		9122E8A61E9783DF009EBF74 /* play_local@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "play_local@2x.png"; sourceTree = "<group>"; };
 		9122E8A71E9783DF009EBF74 /* play_local@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "play_local@3x.png"; sourceTree = "<group>"; };
+		91BEBC3F1E97B7530044F3C5 /* MultiMediaPlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultiMediaPlayerViewController.h; sourceTree = "<group>"; };
+		91BEBC401E97B7530044F3C5 /* MultiMediaPlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultiMediaPlayerViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +81,10 @@
 				9122E89E1E977FD4009EBF74 /* Info.plist */,
 				9122E8961E977FD4009EBF74 /* MultiMediaPlayer.xcdatamodeld */,
 				9122E88A1E977FD4009EBF74 /* Supporting Files */,
+				910F31661E97A3DD00FB5617 /* NavigationController.h */,
+				910F31671E97A3DD00FB5617 /* NavigationController.m */,
+				91BEBC3F1E97B7530044F3C5 /* MultiMediaPlayerViewController.h */,
+				91BEBC401E97B7530044F3C5 /* MultiMediaPlayerViewController.m */,
 			);
 			path = MultiMediaPlayer;
 			sourceTree = "<group>";
@@ -86,6 +100,8 @@
 		9122E8A51E9783DF009EBF74 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				910F31621E97947E00FB5617 /* play_remote@2x.png */,
+				910F31631E97947E00FB5617 /* play_remote@3x.png */,
 				9122E8A61E9783DF009EBF74 /* play_local@2x.png */,
 				9122E8A71E9783DF009EBF74 /* play_local@3x.png */,
 			);
@@ -151,6 +167,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				910F31651E97947E00FB5617 /* play_remote@3x.png in Resources */,
+				910F31641E97947E00FB5617 /* play_remote@2x.png in Resources */,
 				9122E89A1E977FD4009EBF74 /* Assets.xcassets in Resources */,
 				9122E8A91E9783DF009EBF74 /* play_local@3x.png in Resources */,
 				9122E8A81E9783DF009EBF74 /* play_local@2x.png in Resources */,
@@ -164,8 +182,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				91BEBC411E97B7530044F3C5 /* MultiMediaPlayerViewController.m in Sources */,
 				9122E8921E977FD4009EBF74 /* PlayGuideViewController.m in Sources */,
 				9122E8981E977FD4009EBF74 /* MultiMediaPlayer.xcdatamodeld in Sources */,
+				910F31681E97A3DD00FB5617 /* NavigationController.m in Sources */,
 				9122E88F1E977FD4009EBF74 /* AppDelegate.m in Sources */,
 				9122E88C1E977FD4009EBF74 /* main.m in Sources */,
 			);
@@ -313,6 +333,7 @@
 				9122E8A31E977FD4009EBF74 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
