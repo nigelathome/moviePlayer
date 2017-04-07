@@ -8,6 +8,9 @@
 
 #import "PlayGuideViewController.h"
 
+static const NSString *kplayLocal = @"playLocalVideo";
+static const NSString *kplayRemote = @"playRemoteVideo";
+
 @interface PlayGuideViewController ()
 
 @property (nonatomic, strong) UIButton *playLocal;
@@ -22,7 +25,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
     self.playLocal = [[UIButton alloc] init];
+    [self.playLocalView performSelector:@selector(playVideo:) withObject:nil];
     [self.view addSubview:self.playLocal];
     
     self.playRemote = [[UIButton alloc] init];
@@ -38,14 +43,24 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+#pragma events
+- (void)setPlayLocal:(UIButton *)playLocal
+{
+    // push player vc
+    
+    
 }
-*/
+
+#pragma tips
+- (BOOL)alertErrorTip
+{
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Asset Unavailable"
+                                                        message:@"The requested asset could not be loaded."
+                                                       delegate:nil cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil, nil];
+    [alertView show];
+    return NO;
+
+}
 
 @end
