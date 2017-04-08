@@ -42,6 +42,7 @@
     CGRect Rect1 = CGRectMake(160, 80, 130, 163);
     self.playLocal = [[UIButton alloc] initWithFrame:Rect1];
     [self.playLocal addTarget:self action:@selector(playVideo:) forControlEvents:UIControlEventTouchUpInside];
+    [self.playLocal setTag:22];
     [self.view addSubview:self.playLocal];
     
     self.playLocalView = [[UIImageView alloc] initWithFrame:self.playLocal.frame];
@@ -57,6 +58,7 @@
     CGRect Rect2 = CGRectMake(self.playLocal.frame.origin.x + self.playLocal.frame.size.width + 100, self.playLocal.frame.origin.y, self.playLocal.frame.size.width, self.playLocal.frame.size.height);
     self.playRemote = [[UIButton alloc] initWithFrame:Rect2];
     [self.playRemote addTarget:self action:@selector(playVideo:) forControlEvents:UIControlEventTouchUpInside];
+    [self.playRemote setTag:23];
     [self.view addSubview:self.playRemote];
     
     self.playRemoteView = [[UIImageView alloc] initWithFrame:Rect2];
@@ -83,12 +85,21 @@
 #pragma events
 - (void)playVideo:(id)sender
 {
-    // push player vc
     if ([sender isKindOfClass:[UIButton class]]) {
-        
+        UIButton *playButton = (UIButton *)sender;
+        switch (playButton.tag) {
+            case 22:
+                // do sth for prepare local video
+                break;
+            
+            case 23:
+                // do sth for prepare remote video
+                break;
+
+            default:
+                break;
+        }
     }
-    
-    
 }
 
 #pragma tips
