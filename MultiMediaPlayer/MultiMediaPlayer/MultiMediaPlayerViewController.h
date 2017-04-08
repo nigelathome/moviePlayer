@@ -10,4 +10,6 @@
 
 @interface MultiMediaPlayerViewController : UIViewController
 
+@property (nonatomic, strong) NSURL *assetURL;
+
 @end
