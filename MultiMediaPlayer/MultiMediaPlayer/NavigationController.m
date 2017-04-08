@@ -43,16 +43,11 @@
         return YES;
     }
     if ([self.topViewController isKindOfClass:[PlayGuideViewController class]]) {
-        return YES;
+        return NO;
     }
     return NO;
 }
 
-// 支持的界面方向
-- (UIInterfaceOrientation)supportedInterfaceOrientations
-{
-    return UIInterfaceOrientationMaskAllButUpsideDown;
-}
 /*
 #pragma mark - Navigation
 
