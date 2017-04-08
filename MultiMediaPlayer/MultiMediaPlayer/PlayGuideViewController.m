@@ -94,11 +94,17 @@
 #pragma tips
 - (BOOL)alertErrorTip
 {
-    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Asset Unavailable"
-                                                        message:@"The requested asset could not be loaded."
-                                                       delegate:nil cancelButtonTitle:@"OK"
-                                              otherButtonTitles:nil, nil];
-    [alertView show];
+    NSString *message = [[NSString alloc] initWithFormat:@"The requested asset could not be loaded."];
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Asset Unavailable"
+                                                                   message:message
+                                                            preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *action = [UIAlertAction actionWithTitle:@"OK"
+                                                     style:UIAlertActionStyleDefault
+                                                   handler:nil];
+    [alert addAction:action];
+    [self presentViewController:alert
+                       animated:YES
+                     completion:nil];
     return NO;
     
 }
