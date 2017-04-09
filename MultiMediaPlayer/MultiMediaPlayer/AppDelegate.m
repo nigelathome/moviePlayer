@@ -93,16 +93,6 @@
     return _persistentContainer;
 }
 
-- (UIInterfaceOrientationMask)application:(UIApplication *)application supportedInterfaceOrientationsForWindow:(UIWindow *)window
-{
-    if (self.allowRotation) {
-        return UIInterfaceOrientationMaskAll;
-    }
-    
-    return UIInterfaceOrientationMaskPortrait;
-    
-}
-
 #pragma mark - Core Data Saving support
 
 - (void)saveContext {
