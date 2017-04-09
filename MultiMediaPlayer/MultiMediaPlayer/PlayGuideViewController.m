@@ -9,7 +9,7 @@
 #import "PlayGuideViewController.h"
 #import "ComDef.h"
 #import "AppDelegate.h"
-//#import "HCYoutubeParser.h"
+#import "YouTubeParser.h"
 
 @interface PlayGuideViewController ()
 
@@ -70,13 +70,14 @@
 }
 
 - (void)initURL {
+    
     // Init local asset
     self.localURL = [[NSBundle mainBundle] URLForResource:@"hubblecast" withExtension:@"m4v"];
     
     // Init streaming asset
-//    [HCYoutubeParser h264videosWithYoutubeURL:[NSURL URLWithString:YOUTUBE_URL] completeBlock:^(NSDictionary *urls, NSError *error) {
-//        self.streamingURL = [NSURL URLWithString:urls[@"hd720"]];
-//    }];
+    [YouTubeParser h264VideosWithYoutubeURL:[NSURL URLWithString:YOUTUBE_URL] completeBlock:^(NSDictionary *dic, NSError *NSError) {
+        self.streamingURL = [NSURL URLWithString:dic[@"hd720"]];
+    }];
 
 }
 

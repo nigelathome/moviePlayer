@@ -26,7 +26,7 @@
 		91E7CA851E9A2F6D00EFF2BF /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91E7CA841E9A2F6D00EFF2BF /* AVFoundation.framework */; };
 		91E7CA871E9A2F7700EFF2BF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91E7CA861E9A2F7700EFF2BF /* CoreGraphics.framework */; };
 		91E7CA891E9A2F8200EFF2BF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91E7CA881E9A2F8200EFF2BF /* Foundation.framework */; };
-		91E7CA911E9A30C000EFF2BF /* HCYoutubeParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 91E7CA901E9A30C000EFF2BF /* HCYoutubeParser.m */; };
+		91E7CA941E9A354C00EFF2BF /* YouTubeParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 91E7CA931E9A354C00EFF2BF /* YouTubeParser.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,8 +55,8 @@
 		91E7CA841E9A2F6D00EFF2BF /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		91E7CA861E9A2F7700EFF2BF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		91E7CA881E9A2F8200EFF2BF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		91E7CA8F1E9A30C000EFF2BF /* HCYoutubeParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCYoutubeParser.h; sourceTree = "<group>"; };
-		91E7CA901E9A30C000EFF2BF /* HCYoutubeParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCYoutubeParser.m; sourceTree = "<group>"; };
+		91E7CA921E9A354C00EFF2BF /* YouTubeParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YouTubeParser.h; sourceTree = "<group>"; };
+		91E7CA931E9A354C00EFF2BF /* YouTubeParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YouTubeParser.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,13 +104,14 @@
 				91E7CA5A1E9A2A2200EFF2BF /* main.m */,
 				91E7CA5B1E9A2A2200EFF2BF /* MultiMediaPlayer.xcdatamodeld */,
 				91E7CA5D1E9A2A2200EFF2BF /* MultiMediaPlayerViewController.h */,
-				91E7CA8E1E9A308E00EFF2BF /* Support */,
 				91E7CA5E1E9A2A2200EFF2BF /* MultiMediaPlayerViewController.m */,
 				91E7CA5F1E9A2A2200EFF2BF /* NavigationController.h */,
 				91E7CA601E9A2A2200EFF2BF /* NavigationController.m */,
 				91E7CA621E9A2A2200EFF2BF /* PlayGuideViewController.h */,
 				91E7CA631E9A2A2200EFF2BF /* PlayGuideViewController.m */,
 				91E7CA641E9A2A2200EFF2BF /* Resource */,
+				91E7CA921E9A354C00EFF2BF /* YouTubeParser.h */,
+				91E7CA931E9A354C00EFF2BF /* YouTubeParser.m */,
 			);
 			path = MultiMediaPlayer;
 			sourceTree = "<group>";
@@ -138,15 +139,6 @@
 				91E7CA7E1E9A2F4900EFF2BF /* UIKit.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		91E7CA8E1E9A308E00EFF2BF /* Support */ = {
-			isa = PBXGroup;
-			children = (
-				91E7CA8F1E9A30C000EFF2BF /* HCYoutubeParser.h */,
-				91E7CA901E9A30C000EFF2BF /* HCYoutubeParser.m */,
-			);
-			path = Support;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -229,7 +221,7 @@
 				91E7CA6E1E9A2A2200EFF2BF /* MultiMediaPlayer.xcdatamodeld in Sources */,
 				91E7CA701E9A2A2200EFF2BF /* NavigationController.m in Sources */,
 				91E7CA711E9A2A2200EFF2BF /* PlayGuideViewController.m in Sources */,
-				91E7CA911E9A30C000EFF2BF /* HCYoutubeParser.m in Sources */,
+				91E7CA941E9A354C00EFF2BF /* YouTubeParser.m in Sources */,
 				91E7CA6D1E9A2A2200EFF2BF /* main.m in Sources */,
 				91E7CA6A1E9A2A2200EFF2BF /* AppDelegate.m in Sources */,
 			);
