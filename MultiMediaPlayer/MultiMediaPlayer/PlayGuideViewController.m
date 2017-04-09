@@ -14,10 +14,12 @@
 
 @property (nonatomic, strong) UIButton *playLocal;
 @property (nonatomic, strong) UIButton *playRemote;
-@property (nonatomic, strong) UIImageView *playLocalView;
-@property (nonatomic, strong) UIImageView *playRemoteView;
+
 @property (nonatomic, strong) UILabel *playLocalLabel;
 @property (nonatomic, strong) UILabel *playRemoteLabel;
+
+@property (nonatomic, strong) NSURL *localURL;
+@property (nonatomic, strong) NSURL *streamingURL;
 
 @end
 
@@ -54,19 +56,27 @@
     
     CGRect Rect2 = CGRectMake(self.playLocal.frame.origin.x + self.playLocal.frame.size.width + 100, self.playLocal.frame.origin.y, self.playLocal.frame.size.width, self.playLocal.frame.size.height);
     self.playRemote = [[UIButton alloc] initWithFrame:Rect2];
+    UIImage *backgroundImage2 = [UIImage imageNamed:@"play_remote"];//远程文件
+    [self.playRemote setBackgroundImage:backgroundImage2 forState:UIControlStateNormal];
     [self.playRemote addTarget:self action:@selector(playVideo:) forControlEvents:UIControlEventTouchUpInside];
     [self.playRemote setTag:23];
     [self.view addSubview:self.playRemote];
-    
-    self.playRemoteView = [[UIImageView alloc] initWithFrame:Rect2];
-    UIImage *backgroundImage2 = [UIImage imageNamed:@"play_remote"];//远程文件
-    self.playRemoteView.image = backgroundImage2;
-    [self.view addSubview:self.playRemoteView];
-    
+   
     self.playRemoteLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.playRemote.frame.origin.x, self.playRemote.frame.origin.y + self.playRemote.frame.size.height + 30, self.playRemote.frame.size.width, 22)];
     self.playRemoteLabel.textAlignment = NSTextAlignmentCenter;
     self.playRemoteLabel.text = @"Play Remote";
     [self.view addSubview:self.playRemoteLabel];
+}
+
+- (void)initURL {
+    // Init local asset
+    self.localURL = [[NSBundle mainBundle] URLForResource:@"hubblecast" withExtension:@"m4v"];
+    
+    // Init streaming asset
+    [HCYoutubeParser h264videosWithYoutubeURL:[NSURL URLWithString:YOUTUBE_URL] completeBlock:^(NSDictionary *urls, NSError *error) {
+        self.streamingURL = [NSURL URLWithString:urls[@"hd720"]];
+    }];
+
 }
 
 // iOS 9 以后隐藏当前VC状态栏的方法：重写UIViewController的prefersStatusBarHidden方法
