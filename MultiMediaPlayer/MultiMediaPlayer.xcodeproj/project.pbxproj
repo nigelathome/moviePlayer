@@ -19,6 +19,7 @@
 		9122E8A91E9783DF009EBF74 /* play_local@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9122E8A71E9783DF009EBF74 /* play_local@3x.png */; };
 		91BEBC411E97B7530044F3C5 /* MultiMediaPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91BEBC401E97B7530044F3C5 /* MultiMediaPlayerViewController.m */; };
 		91E7CA4D1E99E3B500EFF2BF /* hubblecast.m4v in Resources */ = {isa = PBXBuildFile; fileRef = 91E7CA4C1E99E3B500EFF2BF /* hubblecast.m4v */; };
+		91E7CA4F1E99F3B600EFF2BF /* OpenSource in Resources */ = {isa = PBXBuildFile; fileRef = 91E7CA4E1E99F3B600EFF2BF /* OpenSource */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		91BEBC3F1E97B7530044F3C5 /* MultiMediaPlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultiMediaPlayerViewController.h; sourceTree = "<group>"; };
 		91BEBC401E97B7530044F3C5 /* MultiMediaPlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultiMediaPlayerViewController.m; sourceTree = "<group>"; };
 		91E7CA4C1E99E3B500EFF2BF /* hubblecast.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = hubblecast.m4v; sourceTree = "<group>"; };
+		91E7CA4E1E99F3B600EFF2BF /* OpenSource */ = {isa = PBXFileReference; lastKnownFileType = folder; path = OpenSource; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 		9122E8891E977FD4009EBF74 /* MultiMediaPlayer */ = {
 			isa = PBXGroup;
 			children = (
+				91E7CA4E1E99F3B600EFF2BF /* OpenSource */,
 				9122E8A51E9783DF009EBF74 /* Resource */,
 				9122E88D1E977FD4009EBF74 /* AppDelegate.h */,
 				9122E88E1E977FD4009EBF74 /* AppDelegate.m */,
@@ -176,6 +179,7 @@
 				9122E89A1E977FD4009EBF74 /* Assets.xcassets in Resources */,
 				9122E8A91E9783DF009EBF74 /* play_local@3x.png in Resources */,
 				9122E8A81E9783DF009EBF74 /* play_local@2x.png in Resources */,
+				91E7CA4F1E99F3B600EFF2BF /* OpenSource in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
