@@ -41,14 +41,11 @@
     //    CGRect Rect1 = CGRectMake(kScreenWidth/3, adapteWith(48), adapteWith(80), adapteWith(102));
     CGRect Rect1 = CGRectMake(160, 80, 130, 163);
     self.playLocal = [[UIButton alloc] initWithFrame:Rect1];
+    UIImage *backgroundImage1 = [UIImage imageNamed:@"play_local"];//本地文件
+    [self.playLocal setBackgroundImage:backgroundImage1 forState:UIControlStateNormal];
     [self.playLocal addTarget:self action:@selector(playVideo:) forControlEvents:UIControlEventTouchUpInside];
     [self.playLocal setTag:22];
     [self.view addSubview:self.playLocal];
-    
-    self.playLocalView = [[UIImageView alloc] initWithFrame:self.playLocal.frame];
-    UIImage *backgroundImage1 = [UIImage imageNamed:@"play_local"];//本地文件
-    self.playLocalView.image = backgroundImage1;
-    [self.view addSubview:self.playLocalView];
     
     self.playLocalLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.playLocal.frame.origin.x, self.playLocal.frame.origin.y + self.playLocal.frame.size.height + 30, self.playLocal.frame.size.width, 22)];
     self.playLocalLabel.textAlignment = NSTextAlignmentCenter;
