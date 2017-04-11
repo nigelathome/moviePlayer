@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		91284ED31E9BBCA10049F16B /* MediaPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91284ED21E9BBCA10049F16B /* MediaPlayerViewController.m */; };
+		91284ED61E9BC8B50049F16B /* MediaPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 91284ED51E9BC8B50049F16B /* MediaPlayerView.m */; };
+		91284ED91E9BC9C80049F16B /* MediaPlayerOverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 91284ED81E9BC9C80049F16B /* MediaPlayerOverlayView.m */; };
 		91E7CA6A1E9A2A2200EFF2BF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 91E7CA561E9A2A2200EFF2BF /* AppDelegate.m */; };
 		91E7CA6B1E9A2A2200EFF2BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91E7CA571E9A2A2200EFF2BF /* Assets.xcassets */; };
 		91E7CA6C1E9A2A2200EFF2BF /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 91E7CA591E9A2A2200EFF2BF /* Info.plist */; };
@@ -31,6 +34,12 @@
 
 /* Begin PBXFileReference section */
 		9122E8871E977FD4009EBF74 /* MultiMediaPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MultiMediaPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		91284ED11E9BBCA10049F16B /* MediaPlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MediaPlayerViewController.h; sourceTree = "<group>"; };
+		91284ED21E9BBCA10049F16B /* MediaPlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MediaPlayerViewController.m; sourceTree = "<group>"; };
+		91284ED41E9BC8B50049F16B /* MediaPlayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MediaPlayerView.h; sourceTree = "<group>"; };
+		91284ED51E9BC8B50049F16B /* MediaPlayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MediaPlayerView.m; sourceTree = "<group>"; };
+		91284ED71E9BC9C80049F16B /* MediaPlayerOverlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MediaPlayerOverlayView.h; sourceTree = "<group>"; };
+		91284ED81E9BC9C80049F16B /* MediaPlayerOverlayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MediaPlayerOverlayView.m; sourceTree = "<group>"; };
 		91E7CA551E9A2A2200EFF2BF /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		91E7CA561E9A2A2200EFF2BF /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		91E7CA571E9A2A2200EFF2BF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -112,6 +121,12 @@
 				91E7CA641E9A2A2200EFF2BF /* Resource */,
 				91E7CA921E9A354C00EFF2BF /* YouTubeParser.h */,
 				91E7CA931E9A354C00EFF2BF /* YouTubeParser.m */,
+				91284ED11E9BBCA10049F16B /* MediaPlayerViewController.h */,
+				91284ED21E9BBCA10049F16B /* MediaPlayerViewController.m */,
+				91284ED41E9BC8B50049F16B /* MediaPlayerView.h */,
+				91284ED51E9BC8B50049F16B /* MediaPlayerView.m */,
+				91284ED71E9BC9C80049F16B /* MediaPlayerOverlayView.h */,
+				91284ED81E9BC9C80049F16B /* MediaPlayerOverlayView.m */,
 			);
 			path = MultiMediaPlayer;
 			sourceTree = "<group>";
@@ -218,7 +233,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				91E7CA6F1E9A2A2200EFF2BF /* MultiMediaPlayerViewController.m in Sources */,
+				91284ED91E9BC9C80049F16B /* MediaPlayerOverlayView.m in Sources */,
 				91E7CA6E1E9A2A2200EFF2BF /* MultiMediaPlayer.xcdatamodeld in Sources */,
+				91284ED61E9BC8B50049F16B /* MediaPlayerView.m in Sources */,
+				91284ED31E9BBCA10049F16B /* MediaPlayerViewController.m in Sources */,
 				91E7CA701E9A2A2200EFF2BF /* NavigationController.m in Sources */,
 				91E7CA711E9A2A2200EFF2BF /* PlayGuideViewController.m in Sources */,
 				91E7CA941E9A354C00EFF2BF /* YouTubeParser.m in Sources */,

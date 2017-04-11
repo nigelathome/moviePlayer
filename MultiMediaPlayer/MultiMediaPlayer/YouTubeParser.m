@@ -34,14 +34,14 @@ NSLog(@"Query:%@", [url query]);  //参数 id=1
 
 @implementation YouTubeParser
 
-+ (NSString *)youTubeIDFromYouTubeURL:(NSURL *)youTubeUrl {
++ (NSString *)youTubeIDFromYouTubeURL:(NSURL *)youTubeURL {
     
     NSString *youTubeID = nil;
     
-    if ([youTubeUrl.host isEqualToString:@"youtu.be"]) {
-        youTubeID = [[youTubeUrl pathComponents] objectAtIndex:1];
-    } else if (NSNotFound != [youTubeUrl.absoluteString rangeOfString:@"www.youtube.com/embed"].location) { //url中存在子串@"www.youtube.com/embed"
-        youtubeID = [[youtubeURL pathComponents] objectAtIndex:2];
+    if ([youTubeURL.host isEqualToString:@"youtu.be"]) {
+        youTubeID = [[youTubeURL pathComponents] objectAtIndex:1];
+    } else if (NSNotFound != [youTubeURL.absoluteString rangeOfString:@"www.youtube.com/embed"].location) { //url中存在子串@"www.youtube.com/embed"
+        youTubeID = [[youTubeURL pathComponents] objectAtIndex:2];
     } else {
         //
     }
